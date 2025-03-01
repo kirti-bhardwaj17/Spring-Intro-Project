@@ -27,4 +27,8 @@ public class HelloController {
     public String greetUserByPost(@RequestBody UserDTO user) {
         return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz!";
     }
+    @PutMapping("/put/{firstName}") // Handles PUT request at /hello/put/{firstName}
+    public String greetUser(@PathVariable String firstName, @RequestParam String lastName) {
+        return "Hello " + firstName + " " + lastName + " from BridgeLabz!";
+    }
 }
