@@ -1,4 +1,5 @@
 package com.example.demo.controller;
+import com.example.demo.UserDTO;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -21,5 +22,9 @@ public class HelloController {
     @GetMapping("/param/{name}")
     public String greetUserByPath(@PathVariable String name) {
         return "Hello " + name + " from BridgeLabz!";
+    }
+    @PostMapping("/post")
+    public String greetUserByPost(@RequestBody UserDTO user) {
+        return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz!";
     }
 }
