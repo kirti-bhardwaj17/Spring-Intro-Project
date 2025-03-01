@@ -14,7 +14,12 @@ public class HelloController {
 
     // GET request with a query parameter (http://localhost:8080/hello/query?name=Mark)
     @GetMapping("/query")
-    public String greetUser(@RequestParam String name) {
+    public String greetUserByQuery(@RequestParam String name) {
+        return "Hello " + name + " from BridgeLabz!";
+    }
+
+    @GetMapping("/param/{name}")
+    public String greetUserByPath(@PathVariable String name) {
         return "Hello " + name + " from BridgeLabz!";
     }
 }
